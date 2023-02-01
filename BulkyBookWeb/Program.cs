@@ -1,8 +1,20 @@
+using BulkyBookWeb.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//MSSQL Db Connection
+//builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+//    builder.Configuration.GetConnectionString("DefaultConnection")
+//    ));
+
+//MySQL Db Connection
+builder.Services.AddDbContextPool<AppDbContext>(options => options.UseMySQL(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

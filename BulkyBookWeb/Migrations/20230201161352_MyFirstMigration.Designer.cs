@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyBookWeb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230131181750_MyFirstMigration")]
+    [Migration("20230201161352_MyFirstMigration")]
     partial class MyFirstMigration
     {
         /// <inheritdoc />
